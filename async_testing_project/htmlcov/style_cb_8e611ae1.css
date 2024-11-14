@@ -1,0 +1,466 @@
+@charset "UTF-8";
+/* Licensed under the Apache License: http://www.apache.org/licenses/LICENSE-2.0 */
+/* For details: https://github.com/nedbat/coveragepy/blob/master/NOTICE.txt */
+/* Don't edit this .css file. Edit the .scss file instead! */
+
+/* Reset styles for consistent rendering across browsers */
+html, body, h1, h2, h3, p, table, td, th {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+/* Base styles for body */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 1em;
+    background: #fff;
+    color: #000;
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1e1e1e;
+        color: #eee;
+    }
+}
+
+/* Font size adjustments */
+html > body {
+    font-size: 16px;
+}
+
+/* Link styles */
+a:active, a:focus {
+    outline: 2px dashed #007acc;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #007acc; /* Change hover color */
+}
+
+/* Paragraph styles */
+p {
+    font-size: .875em;
+    line-height: 1.4em;
+}
+
+/* Table styles */
+table {
+    border-collapse: collapse;
+    width: 100%; /* Full width for tables */
+}
+
+td {
+    vertical-align: top;
+    padding: 0.5em; /* Added padding for table cells */
+}
+
+table tr.hidden {
+    display: none !important;
+}
+
+p#no_rows {
+    display: none;
+    font-size: 1.15em;
+    font-family: inherit;
+}
+
+/* Header styles */
+header {
+    background: #f8f8f8;
+    width: 100%;
+    z-index: 2;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+@media (prefers-color-scheme: dark) {
+    header {
+        background: black;
+        border-color: #333;
+    }
+}
+
+header .content {
+    padding: 1rem 3.5rem;
+}
+
+header h2 {
+    margin-top: .5em;
+    font-size: 1em;
+}
+
+/* Button styles */
+header h2 a.button,
+header button {
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid;
+    border-radius: .2em;
+    background: #eee;
+    color: inherit;
+    text-decoration: none;
+    padding: .1em .5em;
+    margin: 1px calc(.1em + 1px);
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s; /* Smooth transitions */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Added shadow for buttons */
+}
+
+@media (prefers-color-scheme: dark) {
+    header h2 a.button,
+    header button {
+        background: #333;
+        border-color: #444;
+    }
+}
+
+header h2 a.button.current {
+    border: 2px solid;
+    background: #fff;
+    border-color: #999;
+    cursor: default;
+}
+
+@media (prefers-color-scheme: dark) {
+    header h2 a.button.current {
+        background: #1e1e1e;
+        border-color: #777;
+    }
+}
+
+header p.text {
+    margin: .5em 0 -.5em;
+    color: #666;
+    font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+    header p.text {
+        color: #aaa;
+    }
+}
+
+header.sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 2.5em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for sticky header */
+}
+
+header.sticky .text {
+    display: none;
+}
+
+header.sticky h1,
+header.sticky h2 {
+    font-size: 1em;
+    margin-top: 0;
+    display: inline-block;
+}
+
+header.sticky .content {
+    padding: 0.5rem 3.5rem;
+}
+
+header.sticky .content p {
+    font-size: 1em;
+}
+
+header.sticky ~ #source {
+    padding-top: 6.5em;
+}
+
+/* Main content styles */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer styles */
+footer {
+    margin: 1rem 3.5rem;
+}
+
+footer .content {
+    padding: 0;
+    color: #666;
+    font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+    footer .content {
+        color: #aaa;
+    }
+}
+
+/* Index styles */
+#index {
+    margin: 1rem 0 0 3.5rem;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.875em;
+}
+
+#index table.index {
+    margin-left: -.5em;
+}
+
+#index td,
+#index th {
+    text-align: right;
+    padding: .25em .5em;
+    border-bottom: 1px solid #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+    #index td,
+    #index th {
+        border-color: #333;
+    }
+}
+
+#index td.name,
+#index th.name {
+    text-align: left;
+    width: auto;
+    font-family: inherit;
+    min-width: 15em;
+}
+
+#index th {
+    font-family: inherit;
+    font-style: italic;
+    color: #333;
+    cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+    #index th {
+        color: #ddd;
+    }
+}
+
+#index th:hover {
+    background: #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+    #index th:hover {
+        background: #333;
+    }
+}
+
+#index th .arrows {
+    color: #666;
+    font-size: 85%;
+    font-family: sans-serif;
+    font-style: normal;
+    pointer-events: none;
+}
+
+#index th[aria-sort="ascending"],
+#index th[aria-sort="descending"] {
+    white-space: nowrap;
+    background: #eee;
+    padding-left: .5em;
+}
+
+@media (prefers-color-scheme: dark) {
+    #index th[aria-sort="ascending"],
+    #index th[aria-sort="descending"] {
+        background: #333;
+    }
+}
+
+#index th[aria-sort="ascending"] .arrows::after {
+    content: " ▲";
+}
+
+#index th[aria-sort="descending"] .arrows::after {
+    content: " ▼";
+}
+
+#index td.name {
+    font-size: 1.15em;
+}
+
+#index td.name a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#index td.name .no-noun {
+    font-style: italic;
+}
+
+#index tr.total td,
+#index tr.total_dynamic td {
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-bottom: none;
+}
+
+#index tr.region:hover {
+    background: #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+    #index tr.region:hover {
+        background: #333;
+    }
+}
+
+#index tr.region:hover td.name {
+    text-decoration: underline;
+    color: inherit;
+}
+
+/* Scroll marker styles */
+#scroll_marker {
+    position: fixed;
+    z-index: 3;
+    right: 0;
+    top: 0;
+    width: 16px;
+    height: 100%;
+    background: #fff;
+    border-left: 1px solid #eee;
+    will-change: transform;
+}
+
+@media (prefers-color-scheme: dark) {
+    #scroll_marker {
+        background: #1e1e1e;
+        border-color: #333;
+    }
+}
+
+#scroll_marker .marker {
+    background: #ccc;
+    position: absolute;
+    min-height: 3px;
+    width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    #scroll_marker .marker {
+        background: #444;
+    }
+}
+
+/* Additional styles for annotations and context labels */
+#source p .annotate {
+    font-family: inherit;
+    color: #666;
+    padding-right: .5em;
+}
+
+@media (prefers-color-scheme: dark) {
+    #source p .annotate {
+        color: #ddd;
+    }
+}
+
+#source p .annotate.short:hover ~ .long {
+    display: block;
+}
+
+/* Input styles for context labels */
+#source p input {
+    display: none;
+}
+
+#source p input ~ .r label.ctx {
+    cursor: pointer;
+    border-radius: .25em;
+}
+
+#source p input ~ .r label.ctx::before {
+    content: "▶ ";
+}
+
+#source p input ~ .r label.ctx:hover {
+    background: #e8f4ff;
+    color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+    #source p input ~ .r label.ctx:hover {
+        background: #0f3a42;
+        color: #aaa;
+    }
+}
+
+#source p input:checked ~ .r label.ctx {
+    background: #d0e8ff;
+    color: #666;
+    border-radius: .75em .75em 0 0;
+    padding: 0 .5em;
+    margin: -.25em 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    #source p input:checked ~ .r label.ctx {
+        background: #056;
+        color: #aaa;
+    }
+}
+
+#source p input:checked ~ .r label.ctx::before {
+    content: "▼ ";
+}
+
+#source p input:checked ~ .ctxs {
+    padding: .25em .5em;
+    overflow-y: scroll;
+    max-height: 10.5em;
+}
+
+#source p label.ctx {
+    color: #999;
+    display: inline-block;
+    padding: 0 .5em;
+    font-size: .8333em;
+}
+
+@media (prefers-color-scheme: dark) {
+    #source p label.ctx {
+        color: #777;
+    }
+}
+
+#source p .ctxs {
+    display: block;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all .2s;
+    padding: 0 .5em;
+    font-family: inherit;
+    white-space: nowrap;
+    background: #d0e8ff;
+    border-radius: .25em;
+    margin-right: 1.75em;
+    text-align: right;
+}
+
+@media (prefers-color-scheme: dark) {
+    #source p .ctxs {
+        background: #056;
+    }
+}
